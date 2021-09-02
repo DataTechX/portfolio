@@ -1,0 +1,164 @@
+a {
+	text-decoration: none;
+}
+
+#te {
+	width: 300px;
+	font-family: 'Lato', sans-serif;
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Safari */
+	-khtml-user-select: none;
+	/* Konqueror HTML */
+	-moz-user-select: none;
+	/* Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
+	/* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+
+/* Toggle functionality */
+
+#toggle {
+	display: none;
+}
+
+#toggle:checked~#te .toggle-container .button-toggle {
+	box-shadow: 0 0 0 550px rgba(0, 0, 0, 0.4), inset 0 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#toggle:checked~#te .toggle-container .button-toggle:before {
+	transform: translateY(-50%) rotate(45deg) scale(1);
+}
+
+#toggle:checked~#te .toggle-container .button-toggle:after {
+	transform: translateY(-50%) rotate(-45deg) scale(1);
+}
+
+#toggle:checked~#te .nav {
+	margin-bottom: 100px;
+	pointer-events: auto;
+	transform: translate(50px, 50px);
+}
+
+#toggle:checked~#te .nav .nav-item {
+	color: #f2beff;
+	letter-spacing: 0;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 0;
+	opacity: 1;
+	transform: scaleY(1);
+	transition: 0.5s, opacity 0.1s;
+}
+
+#toggle:checked~#te .nav .nav-item:hover {
+	color: #c300ff;
+}
+
+#toggle:checked~#te .nav .nav-item:before {
+	opacity: 0;
+}
+
+
+/* Toggle button */
+
+.button-toggle {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	margin: 25px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	border-radius: 100%;
+	transition: 0.6s;
+}
+
+.button-toggle:before,
+.button-toggle:after {
+	position: absolute;
+	content: '';
+	top: 50%;
+	left: 15%;
+	width: 20px;
+	height: 2px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+
+.button-toggle:before {
+	transform: translateY(-50%) rotate(45deg) scale(0);
+}
+
+.button-toggle:after {
+	transform: translateY(-50%) rotate(-45deg) scale(0);
+}
+
+.button-toggle:hover:before,
+.button-toggle:hover:after {
+	background-color: #17cc2f;
+}
+
+
+/* Menu */
+
+.nav {
+	margin: 25px 25px 20px;
+	pointer-events: none;
+	transition: 0.5s;
+	border-radius: 40px;
+}
+
+.nav-item {
+	position: relative;
+	display: inline-block;
+	clear: both;
+	font-size: 14px;
+	letter-spacing: -4px;
+	color: transparent;
+	height: 7px;
+	text-transform: uppercase;
+	white-space: nowrap;
+	transform: scaleY(0.2);
+	transition: 0.5s, opacity 1s;
+	float: left;
+}
+
+.nav-item:nth-child(1) {
+	letter-spacing: -7.5px;
+}
+
+.nav-item:nth-child(2) {
+	letter-spacing: -6px;
+}
+
+.nav-item:nth-child(n + 4) {
+	letter-spacing: -8px;
+	margin-top: -7.5px;
+	opacity: 0;
+}
+
+.nav-item:before {
+	position: absolute;
+	content: '';
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #ff00aa;
+	transform: translateY(-50%) scaleY(5);
+	transition: 0.5s;
+}
+
+#toggle:checked~#te .nav .nav-item:before {
+	transition: 0.1s;
+}
