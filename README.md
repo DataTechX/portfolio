@@ -1,2 +1,2 @@
 # ⚒ Work in progress . . .
-## Try it out ❯ https://cosmicdev.xyz/
+## Try it out ❯ https://lynn-th.tk/
